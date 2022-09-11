@@ -1,0 +1,8 @@
+{
+  "@@locale": "zh",
+
+  "appTitle": "報價系統",
+  "@appTitle": {
+    "description": "APP title"
+  }
+}

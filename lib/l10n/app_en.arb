@@ -1,0 +1,96 @@
+{
+  "@@locale": "en",
+
+  "appTitle": "Quotation",
+  "@appTitle": {
+    "description": "APP title"
+  },
+
+  "searchScreenNav": "Search",
+  "@searchScreenNav": {
+    "description": "Search screen navigation title"
+  },
+
+  "clientScreenNav": "Client",
+  "@clientScreenNav": {
+    "description": "Client screen navigation title"
+  },
+
+  "settingScreenNav": "Setting",
+  "@settingScreenNav": {
+    "description": "Setting screen navigation title"
+  },
+
+
+
+
+
+
+  "gNeedLoginText": "Please login account first",
+  "@gNeedLoginText": {
+    "description": ""
+  },
+  "gConfirmDeleteText": "Do you want to delete {clientName}",
+  "@gConfirmDeleteText": {
+    "description": "",
+    "placeholders": {
+      "clientName": {
+        "type": "String",
+        "example": "Hsuan"
+      }
+    }
+  },
+  "gCancel": "Cancel",
+  "@gCancel": {
+    "description": ""
+  },
+  "gOk": "OK",
+  "@gOk": {
+    "description": ""
+  },
+  "gYes": "Yes",
+  "@gYes": {
+    "description": ""
+  },
+  "gNetworkError": "Something wrong with network",
+  "@gNetworkError": {
+    "description": ""
+  },
+  "gEditNote": "Edit Note",
+  "@gEditNote": {
+    "description": ""
+  },
+  "gCamera": "Camera",
+  "@gCamera": {
+    "description": ""
+  },
+  "gPhotoAlbum": "Photo Album",
+  "@gPhotoAlbum": {
+    "description": ""
+  },
+  "gDone": "Done",
+  "@gDone": {
+    "description": ""
+  },
+
+
+
+
+
+  "searchScanQrCodeHintText": "Click the following button to check the commodity location",
+  "@searchScanQrCodeHintText": {
+    "description": ""
+  },
+  "searchScanQrCodeBtnText": "Scan QR Code (Location)",
+  "@searchScanQrCodeBtnText": {
+    "description": ""
+  },
+  "searchScanQrCodeHintText2": "Click the following button to check the commodity quotation",
+  "@searchScanQrCodeHintText2": {
+    "description": ""
+  },
+  "searchScanQrCodeBtnText2": "Search Quotation",
+  "@searchScanQrCodeBtnText2": {
+    "description": ""
+  }
+}

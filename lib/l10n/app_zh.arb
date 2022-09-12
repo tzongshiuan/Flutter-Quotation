@@ -4,5 +4,414 @@
   "appTitle": "報價系統",
   "@appTitle": {
     "description": "APP title"
+  },
+
+  "searchScreenNav": "搜尋",
+  "@searchScreenNav": {
+    "description": "Search screen navigation title"
+  },
+
+  "clientScreenNav": "客戶",
+  "@clientScreenNav": {
+    "description": "Client screen navigation title"
+  },
+
+  "settingScreenNav": "設定",
+  "@settingScreenNav": {
+    "description": "Setting screen navigation title"
+  },
+
+
+
+
+
+
+  "gNeedLoginText": "請先登入帳號",
+  "@gNeedLoginText": {
+    "description": ""
+  },
+  "gCancel": "取消",
+  "@gCancel": {
+    "description": ""
+  },
+  "gOk": "OK",
+  "@gOk": {
+    "description": ""
+  },
+  "gYes": "好",
+  "@gYes": {
+    "description": ""
+  },
+  "gNetworkError": "網路發生異常",
+  "@gNetworkError": {
+    "description": ""
+  },
+  "gEditNote": "編輯備註",
+  "@gEditNote": {
+    "description": ""
+  },
+  "gCamera": "相機",
+  "@gCamera": {
+    "description": ""
+  },
+  "gPhotoAlbum": "相簿",
+  "@gPhotoAlbum": {
+    "description": ""
+  },
+  "gDone": "完成",
+  "@gDone": {
+    "description": ""
+  },
+
+
+
+
+
+  "searchScanQrCodeHintText": "按下按鈕來確認商品位置",
+  "@searchScanQrCodeHintText": {
+    "description": ""
+  },
+  "searchScanQrCodeBtnText": "搜尋商品位置",
+  "@searchScanQrCodeBtnText": {
+    "description": ""
+  },
+  "searchScanQrCodeHintText2": "按下按鈕來確認商品報價",
+  "@searchScanQrCodeHintText2": {
+    "description": ""
+  },
+  "searchScanQrCodeBtnText2": "搜尋商品報價",
+  "@searchScanQrCodeBtnText2": {
+    "description": ""
+  },
+
+
+
+
+
+  "locationWaitResultText": "等待掃描結果",
+  "@checkLocationWaitResultText": {
+    "description": ""
+  },
+  "locationEditLocationHint": "在此設定位置",
+  "@locationEditLocationHint": {
+    "description": ""
+  },
+  "locationRescanBtnText": "重新掃描QR二維碼",
+  "@locationRescanBtnText": {
+    "description": ""
+  },
+
+
+
+
+
+  "commodityGetDataFail": "獲取商品資訊失敗",
+  "@commodityGetDataFail": {
+    "description": ""
+  },
+  "commodityCustomCodeHint": "在此輸入代碼",
+  "@commodityCustomCodeHint": {
+    "description": ""
+  },
+  "commodityNotFoundText": "找不到任何商品",
+  "@commodityNotFoundText": {
+    "description": ""
+  },
+  "commodityRescanBtnText": "重新搜尋",
+  "@commodityRescanBtnText": {
+    "description": ""
+  },
+  "commodityDialogPhotoSelectTitle": "選取方法",
+  "@commodityDialogPhotoSelectTitle": {
+    "description": ""
+  },
+
+
+
+
+
+  "clientAddNewClientText": "新增客戶",
+  "@clientAddNewClientText": {
+    "description": ""
+  },
+  "clientAddClientDialogMsg": "新增客戶",
+  "@clientAddClientDialogMsg": {
+    "description": ""
+  },
+  "clientConfirmDeleteText": "是否要刪除客戶: {clientName}",
+  "@clientConfirmDeleteText": {
+    "description": "",
+    "placeholders": {
+      "clientName": {
+        "type": "String",
+        "example": "Hsuan"
+      }
+    }
+  },
+  "clientAddClientDialogNameHint": "姓名",
+  "@clientAddClientDialogNameHint": {
+    "description": ""
+  },
+  "clientAddClientDialogCompanyHint": "公司",
+  "@clientAddClientDialogCompanyHint": {
+    "description": ""
+  },
+  "clientAddClientDialogEmailHint": "Email",
+  "@clientAddClientDialogEmailHint": {
+    "description": ""
+  },
+
+
+
+
+
+  "quotationEditNoteText": "編輯備註",
+  "@quotationEditNoteText": {
+    "description": ""
+  },
+  "quotationNewQuotationText": "新增報價單",
+  "@quotationNewQuotationText": {
+    "description": ""
+  },
+  "quotationDialogRemoveTitle": "移除報價單",
+  "@quotationDialogRemoveTitle": {
+    "description": ""
+  },
+  "quotationDialogRemoveMsg": "按下yes來刪除項目: {quotationName}",
+  "@quotationDialogRemoveMsg": {
+    "description": "",
+    "placeholders": {
+      "quotationName": {
+        "type": "String",
+        "example": "00001"
+      }
+    }
+  },
+
+
+
+
+
+  "recipeEditNoteText": "編輯備註",
+  "@recipeEditNoteText": {
+    "description": ""
+  },
+  "recipeNewCommodityText": "新增商品",
+  "@recipeNewCommodityText": {
+    "description": ""
+  },
+  "recipeUpdateButtonText": "更新",
+  "@recipeUpdateButtonText": {
+    "description": ""
+  },
+  "recipeDialogRemoveTitle": "移除項目",
+  "@recipeDialogRemoveTitle": {
+    "description": ""
+  },
+  "recipeDialogRemoveMsg": "按下yes來刪除項目",
+  "@recipeDialogRemoveMsg": {
+    "description": ""
+  },
+  "recipeDialogScanQrCode": "掃描QR二維碼",
+  "@recipeDialogScanQrCode": {
+    "description": ""
+  },
+  "recipeDialogNewItem": "新增項目",
+  "@recipeDialogNewItem": {
+    "description": ""
+  },
+  "recipeDialogProductNumber": "貨號",
+  "@recipeDialogProductNumber": {
+    "description": ""
+  },
+
+
+
+
+
+  "settingPageTitle": "客製化設定",
+  "@settingPageTitle": {
+    "description": ""
+  },
+  "settingLoginText": "登入帳號",
+  "@settingLoginText": {
+    "description": ""
+  },
+  "settingCustomMultiLabel": "乘數",
+  "@settingCustomMultiLabel": {
+    "description": ""
+  },
+  "settingUsdPriceLabel": "美金價格",
+  "@settingUsdPriceLabel": {
+    "description": ""
+  },
+  "settingSilverPriceLabel": "銀價格",
+  "@settingSilverPriceLabel": {
+    "description": ""
+  },
+
+
+
+
+
+  "commodityAttributeProductNumber": "貨號",
+  "@commodityAttributeProductNumber": {
+    "description": ""
+  },
+  "commodityAttributePriceNote": "報價備註",
+  "@commodityAttributePriceNote": {
+    "description": ""
+  },
+  "commodityAttributeCopperPriceUsd": "銅報價美金",
+  "@commodityAttributeCopperPriceUsd": {
+    "description": ""
+  },
+  "commodityAttributeSilverPriceUsd": "銀報價美金",
+  "@commodityAttributeSilverPriceUsd": {
+    "description": ""
+  },
+  "commodityAttributePlatePriceWarning": "電鍍價警示",
+  "@commodityAttributePlatePriceWarning": {
+    "description": ""
+  },
+
+  "commodityAttributeStonePriceWarning": "石價警示",
+  "@commodityAttributeStonePriceWarning": {
+    "description": ""
+  },
+  "commodityAttributeCopperPriceWarning": "銅價警示",
+  "@commodityAttributeCopperPriceWarning": {
+    "description": ""
+  },
+  "commodityAttributeCast": "翻砂",
+  "@commodityAttributeCast": {
+    "description": ""
+  },
+  "commodityAttributePolish": "拋光",
+  "@commodityAttributePolish": {
+    "description": ""
+  },
+  "commodityAttributePlateCode": "電鍍代碼",
+  "@commodityAttributePlateCode": {
+    "description": ""
+  },
+  "commodityAttributeOriginalPlatePrice": "原電鍍價",
+  "@commodityAttributeOriginalPlatePrice": {
+    "description": ""
+  },
+  "commodityAttributeNewWhiteGoldPlatePrice": "新白K電鍍價",
+  "@commodityAttributeNewWhiteGoldPlatePrice": {
+    "description": ""
+  },
+  "commodityAttributeStoneGrowthPrice": "石價毛計",
+  "@commodityAttributeStoneGrowthPrice": {
+    "description": ""
+  },
+  "commodityAttributeStoneSettingPrice": "夾工毛計",
+  "@commodityAttributeStoneSettingPrice": {
+    "description": ""
+  },
+  "commodityAttributeOtherTotal": "其他實際加總",
+  "@commodityAttributeOtherTotal": {
+    "description": ""
+  },
+  "commodityAttributeTotalAdditionalPrice": "總加價",
+  "@commodityAttributeTotalAdditionalPrice": {
+    "description": ""
+  },
+  "commodityAttributeCopperPrice": "銅報價",
+  "@commodityAttributeCopperPrice": {
+    "description": ""
+  },
+  "commodityAttributeRealWeight": "實重",
+  "@commodityAttributeRealWeight": {
+    "description": ""
+  },
+  "commodityAttributeGrowthWeight": "毛重",
+  "@commodityAttributeGrowthWeight": {
+    "description": ""
+  },
+  "commodityAttributeProductWeight": "成品重",
+  "@commodityAttributeProductWeight": {
+    "description": ""
+  },
+  "commodityAttributeAddPrice1": "加價1",
+  "@commodityAttributeAddPrice1": {
+    "description": ""
+  },
+  "commodityAttributeAddPrice2": "加價2",
+  "@commodityAttributeAddPrice2": {
+    "description": ""
+  },
+  "commodityAttributeAddPrice3": "加價3",
+  "@commodityAttributeAddPrice3": {
+    "description": ""
+  },
+  "commodityAttributeSilverPrice": "銀報價",
+  "@commodityAttributeSilverPrice": {
+    "description": ""
+  },
+  "commodityAttributeNote": "備註",
+  "@commodityAttributeNote": {
+    "description": ""
+  },
+
+
+
+
+
+  "clientAttributeName": "姓名",
+  "@clientAttributeName": {
+    "description": ""
+  },
+  "clientAttributeCompany": "公司",
+  "@clientAttributeCompany": {
+    "description": ""
+  },
+  "clientAttributeEmail": "Email",
+  "@clientAttributeEmail": {
+    "description": ""
+  },
+
+
+
+
+
+  "quotationAttributeInquiryId": "報價單ID",
+  "@quotationAttributeInquiryId": {
+    "description": ""
+  },
+  "quotationAttributeInquiryCount": "報價商品數量",
+  "@quotationAttributeInquiryCount": {
+    "description": ""
+  },
+  "quotationAttributeInquiryNote": "備註",
+  "@quotationAttributeInquiryNote": {
+    "description": ""
+  },
+
+
+
+
+
+  "recipeAttributeRowNumber": "項目號",
+  "@recipeAttributeRowNumber": {
+    "description": ""
+  },
+  "recipeAttributeProductNumber": "貨號",
+  "@recipeAttributeProductNumber": {
+    "description": ""
+  },
+  "recipeAttributeQuotation": "報價",
+  "@recipeAttributeQuotation": {
+    "description": ""
+  },
+  "recipeAttributeQtyNumber": "數量",
+  "@recipeAttributeQtyNumber": {
+    "description": ""
+  },
+  "recipeAttributeNote": "備註",
+  "@recipeAttributeNote": {
+    "description": ""
   }
 }

@@ -30,16 +30,6 @@
   "@gNeedLoginText": {
     "description": ""
   },
-  "gConfirmDeleteText": "Do you want to delete {clientName}",
-  "@gConfirmDeleteText": {
-    "description": "",
-    "placeholders": {
-      "clientName": {
-        "type": "String",
-        "example": "Hsuan"
-      }
-    }
-  },
   "gCancel": "Cancel",
   "@gCancel": {
     "description": ""
@@ -91,6 +81,337 @@
   },
   "searchScanQrCodeBtnText2": "Search Quotation",
   "@searchScanQrCodeBtnText2": {
+    "description": ""
+  },
+
+
+
+
+
+  "locationWaitResultText": "Wait for scan result",
+  "@checkLocationWaitResultText": {
+    "description": ""
+  },
+  "locationEditLocationHint": "Set location here",
+  "@locationEditLocationHint": {
+    "description": ""
+  },
+  "locationRescanBtnText": "Scan the QR code again",
+  "@locationRescanBtnText": {
+    "description": ""
+  },
+
+
+
+
+
+  "commodityGetDataFail": "Get quotation failed",
+  "@commodityGetDataFail": {
+    "description": ""
+  },
+  "commodityCustomCodeHint": "Enter the custom code here",
+  "@commodityCustomCodeHint": {
+    "description": ""
+  },
+  "commodityNotFoundText": "No Commodity Found",
+  "@commodityNotFoundText": {
+    "description": ""
+  },
+  "commodityRescanBtnText": "Search Again",
+  "@commodityRescanBtnText": {
+    "description": ""
+  },
+  "commodityDialogPhotoSelectTitle": "Select Method",
+  "@commodityDialogPhotoSelectTitle": {
+    "description": ""
+  },
+
+
+
+
+
+  "clientAddNewClientText": "Add New Client",
+  "@clientAddNewClientText": {
+    "description": ""
+  },
+  "clientAddClientDialogMsg": "Add New Client",
+  "@clientAddClientDialogMsg": {
+    "description": ""
+  },
+  "clientConfirmDeleteText": "Do you want to delete {clientName}",
+  "@clientConfirmDeleteText": {
+    "description": "",
+    "placeholders": {
+      "clientName": {
+        "type": "String",
+        "example": "Hsuan"
+      }
+    }
+  },
+  "clientAddClientDialogNameHint": "Customer Name",
+  "@clientAddClientDialogNameHint": {
+    "description": ""
+  },
+  "clientAddClientDialogCompanyHint": "Company",
+  "@clientAddClientDialogCompanyHint": {
+    "description": ""
+  },
+  "clientAddClientDialogEmailHint": "Email",
+  "@clientAddClientDialogEmailHint": {
+    "description": ""
+  },
+
+
+
+
+
+  "quotationEditNoteText": "Edit Note",
+  "@quotationEditNoteText": {
+    "description": ""
+  },
+  "quotationNewQuotationText": "New Quotation",
+  "@quotationNewQuotationText": {
+    "description": ""
+  },
+  "quotationDialogRemoveTitle": "Remove Quotation",
+  "@quotationDialogRemoveTitle": {
+    "description": ""
+  },
+  "quotationDialogRemoveMsg": "Click yes to delete item: {quotationName}",
+  "@quotationDialogRemoveMsg": {
+    "description": "",
+    "placeholders": {
+      "quotationName": {
+        "type": "String",
+        "example": "00001"
+      }
+    }
+  },
+
+
+
+
+
+  "recipeEditNoteText": "Edit Note",
+  "@recipeEditNoteText": {
+    "description": ""
+  },
+  "recipeNewCommodityText": "New Commodity",
+  "@recipeNewCommodityText": {
+    "description": ""
+  },
+  "recipeUpdateButtonText": "Update",
+  "@recipeUpdateButtonText": {
+    "description": ""
+  },
+  "recipeDialogRemoveTitle": "Remove Item",
+  "@recipeDialogRemoveTitle": {
+    "description": ""
+  },
+  "recipeDialogRemoveMsg": "Click yes to delete item",
+  "@recipeDialogRemoveMsg": {
+    "description": ""
+  },
+  "recipeDialogScanQrCode": "Scan QR Code",
+  "@recipeDialogScanQrCode": {
+    "description": ""
+  },
+  "recipeDialogNewItem": "New Item",
+  "@recipeDialogNewItem": {
+    "description": ""
+  },
+  "recipeDialogProductNumber": "Product Number",
+  "@recipeDialogProductNumber": {
+    "description": ""
+  },
+
+
+
+
+
+  "settingPageTitle": "Customized Settings",
+  "@settingPageTitle": {
+    "description": ""
+  },
+  "settingLoginText": "Login Account",
+  "@settingLoginText": {
+    "description": ""
+  },
+  "settingCustomMultiLabel": "Multiplier",
+  "@settingCustomMultiLabel": {
+    "description": ""
+  },
+  "settingUsdPriceLabel": "USD Price",
+  "@settingUsdPriceLabel": {
+    "description": ""
+  },
+  "settingSilverPriceLabel": "Silver Price",
+  "@settingSilverPriceLabel": {
+    "description": ""
+  },
+
+
+
+
+
+  "commodityAttributeProductNumber": "PN",
+  "@commodityAttributeProductNumber": {
+    "description": ""
+  },
+  "commodityAttributePriceNote": "Price Note",
+  "@commodityAttributePriceNote": {
+    "description": ""
+  },
+  "commodityAttributeCopperPriceUsd": "Copper Price USD",
+  "@commodityAttributeCopperPriceUsd": {
+    "description": ""
+  },
+  "commodityAttributeSilverPriceUsd": "Silver Price USD",
+  "@commodityAttributeSilverPriceUsd": {
+    "description": ""
+  },
+  "commodityAttributePlatePriceWarning": "Plate Price Warning",
+  "@commodityAttributePlatePriceWarning": {
+    "description": ""
+  },
+
+  "commodityAttributeStonePriceWarning": "Stone Price Warning",
+  "@commodityAttributeStonePriceWarning": {
+    "description": ""
+  },
+  "commodityAttributeCopperPriceWarning": "CopperPriceWarning",
+  "@commodityAttributeCopperPriceWarning": {
+    "description": ""
+  },
+  "commodityAttributeCast": "Cast",
+  "@commodityAttributeCast": {
+    "description": ""
+  },
+  "commodityAttributePolish": "Polish",
+  "@commodityAttributePolish": {
+    "description": ""
+  },
+  "commodityAttributePlateCode": "Plate Code",
+  "@commodityAttributePlateCode": {
+    "description": ""
+  },
+  "commodityAttributeOriginalPlatePrice": "Original Plate Price",
+  "@commodityAttributeOriginalPlatePrice": {
+    "description": ""
+  },
+  "commodityAttributeNewWhiteGoldPlatePrice": "New White Gold Plate Price",
+  "@commodityAttributeNewWhiteGoldPlatePrice": {
+    "description": ""
+  },
+  "commodityAttributeStoneGrowthPrice": "Stone Growth Price",
+  "@commodityAttributeStoneGrowthPrice": {
+    "description": ""
+  },
+  "commodityAttributeStoneSettingPrice": "Stone Setting Price",
+  "@commodityAttributeStoneSettingPrice": {
+    "description": ""
+  },
+  "commodityAttributeOtherTotal": "Other Total",
+  "@commodityAttributeOtherTotal": {
+    "description": ""
+  },
+  "commodityAttributeTotalAdditionalPrice": "Total Additional Price",
+  "@commodityAttributeTotalAdditionalPrice": {
+    "description": ""
+  },
+  "commodityAttributeCopperPrice": "Copper Price",
+  "@commodityAttributeCopperPrice": {
+    "description": ""
+  },
+  "commodityAttributeRealWeight": "Real Weight",
+  "@commodityAttributeRealWeight": {
+    "description": ""
+  },
+  "commodityAttributeGrowthWeight": "Growth Weight",
+  "@commodityAttributeGrowthWeight": {
+    "description": ""
+  },
+  "commodityAttributeProductWeight": "Product Weight",
+  "@commodityAttributeProductWeight": {
+    "description": ""
+  },
+  "commodityAttributeAddPrice1": "Additional Price 1",
+  "@commodityAttributeAddPrice1": {
+    "description": ""
+  },
+  "commodityAttributeAddPrice2": "Additional Price 2",
+  "@commodityAttributeAddPrice2": {
+    "description": ""
+  },
+  "commodityAttributeAddPrice3": "Additional Price 3",
+  "@commodityAttributeAddPrice3": {
+    "description": ""
+  },
+  "commodityAttributeSilverPrice": "Silver Price",
+  "@commodityAttributeSilverPrice": {
+    "description": ""
+  },
+  "commodityAttributeNote": "Note",
+  "@commodityAttributeNote": {
+    "description": ""
+  },
+
+
+
+
+
+  "clientAttributeName": "Name",
+  "@clientAttributeName": {
+    "description": ""
+  },
+  "clientAttributeCompany": "Company",
+  "@clientAttributeCompany": {
+    "description": ""
+  },
+  "clientAttributeEmail": "Email",
+  "@clientAttributeEmail": {
+    "description": ""
+  },
+
+
+
+
+
+  "quotationAttributeInquiryId": "Inquiry ID",
+  "@quotationAttributeInquiryId": {
+    "description": ""
+  },
+  "quotationAttributeInquiryCount": "Inquiry Count",
+  "@quotationAttributeInquiryCount": {
+    "description": ""
+  },
+  "quotationAttributeInquiryNote": "Note",
+  "@quotationAttributeInquiryNote": {
+    "description": ""
+  },
+
+
+
+
+
+  "recipeAttributeRowNumber": "Row Number",
+  "@recipeAttributeRowNumber": {
+    "description": ""
+  },
+  "recipeAttributeProductNumber": "PN",
+  "@recipeAttributeProductNumber": {
+    "description": ""
+  },
+  "recipeAttributeQuotation": "Quotation",
+  "@recipeAttributeQuotation": {
+    "description": ""
+  },
+  "recipeAttributeQtyNumber": "QTY",
+  "@recipeAttributeQtyNumber": {
+    "description": ""
+  },
+  "recipeAttributeNote": "Note",
+  "@recipeAttributeNote": {
     "description": ""
   }
 }

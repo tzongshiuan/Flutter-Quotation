@@ -71,7 +71,7 @@
   "@searchScanQrCodeHintText": {
     "description": ""
   },
-  "searchScanQrCodeBtnText": "Scan QR Code (Location)",
+  "searchScanQrCodeBtnText": "Search Location",
   "@searchScanQrCodeBtnText": {
     "description": ""
   },

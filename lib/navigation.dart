@@ -1,5 +1,12 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:material_3_demo/ui/client/client_screen.dart';
+import 'package:material_3_demo/ui/commodity/commodity.dart';
+import 'package:material_3_demo/ui/location/location.dart';
+import 'package:material_3_demo/ui/search/search_screen.dart';
+import 'package:material_3_demo/ui/setting/setting_screen.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 List<NavigationDestination> getAppBarDestinations(BuildContext context) {
   return [
@@ -83,4 +90,42 @@ class _NavigationBarsState extends State<NavigationBars> {
       widget.isExampleBar ? exampleBarDestinations : getAppBarDestinations(context),
     );
   }
+}
+
+PersistentTabController controller = PersistentTabController(initialIndex: 0);
+
+//Screens for each nav items.
+List<Widget> buildScreens() {
+  return [
+    const SearchScreen(showNavBottomBar: false),
+    // const LocationScreen(),
+    // const CommodityScreen(),
+    const ClientScreen(),
+    const SettingScreen(),
+  ];
+}
+
+List<PersistentBottomNavBarItem> navBarsItems(BuildContext context) {
+  return [
+    PersistentBottomNavBarItem(
+      icon: const Icon(Icons.widgets),
+      title: (AppLocalizations.of(context)?.searchScreenNav ?? ""),
+      activeColorPrimary: Theme.of(context).colorScheme.secondary,
+      inactiveColorPrimary: Theme.of(context).colorScheme.primary,
+    ),
+    PersistentBottomNavBarItem(
+      icon: const Icon(Icons.people_alt),
+      title: AppLocalizations.of(context)?.clientScreenNav ?? "",
+      activeColorPrimary: Theme.of(context).colorScheme.secondary,
+      inactiveColorPrimary: Theme.of(context).colorScheme.primary,
+    ),
+    PersistentBottomNavBarItem(
+      icon: const Icon(Icons.settings),
+      title: AppLocalizations.of(context)?.settingScreenNav ?? "",
+      activeColorPrimary: Theme.of(context).colorScheme.secondary,
+      inactiveColorPrimary: Theme.of(context).colorScheme.primary,
+      // activeColorPrimary: CupertinoColors.activeBlue,
+      // inactiveColorPrimary: CupertinoColors.systemGrey,
+    ),
+  ];
 }

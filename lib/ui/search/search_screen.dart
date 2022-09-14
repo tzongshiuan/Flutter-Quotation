@@ -1,9 +1,9 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
+import 'package:material_3_demo/ui/commodity/commodity.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import '../common/common_util.dart';
+import '../location/location.dart';
 
 const String tag = "SearchScreen";
 
@@ -115,12 +115,24 @@ class SearchScreen extends StatelessWidget {
   void Function() onSearchLocationBtnClick(BuildContext context) {
     return () {
       debugPrint("$tag onSearchLocationBtnClick()");
+      pushNewScreen(
+        context,
+        screen: const LocationScreen(),
+        withNavBar: true, // OPTIONAL VALUE. True by default.
+        pageTransitionAnimation: PageTransitionAnimation.cupertino,
+      );
     };
   }
 
   void Function() onSearchCommodityBtnClick(BuildContext context) {
     return () {
       debugPrint("$tag onSearchCommodityBtnClick()");
+      pushNewScreen(
+        context,
+        screen: const CommodityScreen(),
+        withNavBar: true, // OPTIONAL VALUE. True by default.
+        pageTransitionAnimation: PageTransitionAnimation.cupertino,
+      );
     };
   }
 }

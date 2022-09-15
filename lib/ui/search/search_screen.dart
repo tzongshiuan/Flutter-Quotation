@@ -92,7 +92,7 @@ class SearchScreen extends StatelessWidget {
                   width: double.infinity,
                   padding: const EdgeInsets.only(left: 10.0, top: 10.0, right: 16.0, bottom: 10.0),
                   child: Text(
-                    AppLocalizations.of(context)?.searchScanQrCodeBtnText2 ?? "",
+                    AppLocalizations.of(context)?.locationRescanBtnText ?? "",
                     style: textTheme.titleLarge!.copyWith(
                         color: Colors.white
                     ),

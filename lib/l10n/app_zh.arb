@@ -92,6 +92,10 @@
   "@checkLocationWaitResultText": {
     "description": ""
   },
+  "locationResultLabel": "位置: ",
+    "@locationResultLabel": {
+      "description": ""
+    },
   "locationEditLocationHint": "在此設定位置",
   "@locationEditLocationHint": {
     "description": ""

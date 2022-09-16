@@ -1,0 +1,15 @@
+{
+  "client_id" : "6ec7cc93-f06a-4914-9327-f5c746a99cba",
+  "authorization_user_agent" : "DEFAULT",
+  "redirect_uri" : "msauth://com.laidesign.flutter_quotation/kZZ0RVmcGZo2Vva4Cw482y7ftxc%3D",
+  "account_mode":"SINGLE",
+  "authorities" : [
+    {
+      "type": "AAD",
+      "audience": {
+        "type": "AzureADMyOrg",
+        "tenant_id": "727fceff-50c9-4204-92cd-380c9888d240"
+      }
+    }
+  ]
+}

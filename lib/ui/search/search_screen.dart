@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:material_3_demo/ui/commodity/commodity.dart';
-import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
+import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import '../common/common_util.dart';
 import '../location/location.dart';
 
@@ -115,7 +115,7 @@ class SearchScreen extends StatelessWidget {
   void Function() onSearchLocationBtnClick(BuildContext context) {
     return () {
       debugPrint("$tag onSearchLocationBtnClick()");
-      pushNewScreen(
+      PersistentNavBarNavigator.pushNewScreen(
         context,
         screen: const LocationScreen(),
         withNavBar: true, // OPTIONAL VALUE. True by default.
@@ -127,7 +127,7 @@ class SearchScreen extends StatelessWidget {
   void Function() onSearchCommodityBtnClick(BuildContext context) {
     return () {
       debugPrint("$tag onSearchCommodityBtnClick()");
-      pushNewScreen(
+      PersistentNavBarNavigator.pushNewScreen(
         context,
         screen: const CommodityScreen(),
         withNavBar: true, // OPTIONAL VALUE. True by default.

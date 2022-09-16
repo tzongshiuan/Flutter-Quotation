@@ -1,12 +1,14 @@
+import 'package:aad_oauth/aad_oauth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_azure_b2c/B2CConfiguration.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:material_3_demo/ui/client/client_screen.dart';
 import 'package:material_3_demo/ui/commodity/commodity.dart';
 import 'package:material_3_demo/ui/location/location.dart';
 import 'package:material_3_demo/ui/search/search_screen.dart';
 import 'package:material_3_demo/ui/setting/setting_screen.dart';
-import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
+import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 List<NavigationDestination> getAppBarDestinations(BuildContext context) {
   return [
@@ -95,13 +97,13 @@ class _NavigationBarsState extends State<NavigationBars> {
 PersistentTabController controller = PersistentTabController(initialIndex: 0);
 
 //Screens for each nav items.
-List<Widget> buildScreens() {
+List<Widget> buildScreens(AadOAuth oauth) {
   return [
     const SearchScreen(showNavBottomBar: false),
     // const LocationScreen(),
     // const CommodityScreen(),
     const ClientScreen(),
-    const SettingScreen(),
+    SettingScreen(oauth: oauth),
   ];
 }
 

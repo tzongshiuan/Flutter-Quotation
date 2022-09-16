@@ -22,6 +22,7 @@ dependencies:
   qr_code_scanner: ^1.0.1
 #  flutter_azure_b2c: ^0.0.9
   aad_oauth: ^0.4.0
+  shared_preferences: ^2.0.15
 
 dev_dependencies:
   flutter_test:

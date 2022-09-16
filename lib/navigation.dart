@@ -96,13 +96,13 @@ class _NavigationBarsState extends State<NavigationBars> {
 PersistentTabController controller = PersistentTabController(initialIndex: 0);
 
 //Screens for each nav items.
-List<Widget> buildScreens(AadOAuth oauth) {
+List<Widget> buildScreens(Key key1, Key key2, Key key3, AadOAuth oauth, Function loginCallback) {
   return [
-    const SearchScreen(showNavBottomBar: false),
+    SearchScreen(key: key1, showNavBottomBar: false),
     // const LocationScreen(),
     // const CommodityScreen(),
-    const ClientScreen(),
-    SettingScreen(oauth: oauth),
+    ClientScreen(key: key2),
+    SettingScreen(key: key3, oauth: oauth, loginCallback: loginCallback),
   ];
 }
 

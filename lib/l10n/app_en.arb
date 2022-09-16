@@ -253,6 +253,10 @@
   "@settingSilverPriceLabel": {
     "description": ""
   },
+  "settingNeedLogin": "Please go to setting page and login account first",
+  "@settingNeedLogin": {
+    "description": ""
+  },
 
 
 

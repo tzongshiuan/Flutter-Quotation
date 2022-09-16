@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 const microColDivider = SizedBox(height: 1);
 const smallColDivider = SizedBox(height: 10);
@@ -39,5 +40,28 @@ TextStyle getCommodityLabelTextStyle(BuildContext context, TextStyle style) {
   return style.copyWith(
     color: Theme.of(context).colorScheme.primary,
     fontWeight: FontWeight.bold
+  );
+}
+
+Widget needLoginUI(BuildContext context, TextTheme textTheme) {
+  return Container(
+    padding: const EdgeInsets.all(20.0),
+    alignment: Alignment.center,
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        const Icon(
+          Icons.warning,
+          color: Colors.orange,
+          size: 70.0,
+        ),
+        Text(
+            AppLocalizations.of(context)?.settingNeedLogin ?? "",
+            style: textTheme.headlineSmall,
+            textAlign: TextAlign.center
+        ),
+      ],
+    ),
   );
 }

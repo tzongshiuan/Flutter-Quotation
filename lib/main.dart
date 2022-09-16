@@ -7,6 +7,7 @@ import 'package:material_3_demo/ui/client/client_screen.dart';
 import 'package:material_3_demo/ui/search/search_screen.dart';
 import 'package:material_3_demo/ui/setting/setting_screen.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
+import 'ui/common/globals.dart' as globals;
 
 import 'navigation.dart';
 
@@ -50,6 +51,8 @@ const int searchScreenIndex = 0;
 const int clientScreenIndex = 1;
 const int settingScreenIndex = 2;
 
+const String tag = "MainScreen";
+
 final navigatorKey = GlobalKey<NavigatorState>();
 
 class _FlutterQuotationState extends State<FlutterQuotation> {
@@ -58,13 +61,17 @@ class _FlutterQuotationState extends State<FlutterQuotation> {
   int colorSelected = 0;
   int screenIndex = searchScreenIndex;
 
+  final searchKey = const Key('searchKey');
+  final clientKey = const Key('clientKey');
+  final settingKey = const Key('settingKey');
+
   late ThemeData themeData;
 
   static final Config config = Config(
     tenant: "727fceff-50c9-4204-92cd-380c9888d240",
     clientId: "6ec7cc93-f06a-4914-9327-f5c746a99cba",
     scope: "openid profile offline_access",
-    redirectUri: "msauth://com.laidesign.flutter_quotation/kZZ0RVmcGZo2Vva4Cw482y7ftxc%3D",
+    redirectUri: "msauth://com.laidesign.flutter_quotation/kZZ0RVmcGZo2Vva4Cw482y7ftxc=",
     navigatorKey: navigatorKey,
   );
   final AadOAuth oauth = AadOAuth(config);
@@ -124,18 +131,18 @@ class _FlutterQuotationState extends State<FlutterQuotation> {
     });
   }
 
-  Widget createScreenFor(int screenIndex, bool showNavBarExample) {
-    switch (screenIndex) {
-      case searchScreenIndex:
-        return SearchScreen(showNavBottomBar: showNavBarExample);
-      case clientScreenIndex:
-        return const ClientScreen();
-      case settingScreenIndex:
-        return SettingScreen(oauth: oauth);
-      default:
-        return SearchScreen(showNavBottomBar: showNavBarExample);
-    }
-  }
+  // Widget createScreenFor(int screenIndex, bool showNavBarExample) {
+  //   switch (screenIndex) {
+  //     case searchScreenIndex:
+  //       return SearchScreen(showNavBottomBar: showNavBarExample);
+  //     case clientScreenIndex:
+  //       return const ClientScreen();
+  //     case settingScreenIndex:
+  //       return SettingScreen(oauth: oauth);
+  //     default:
+  //       return SearchScreen(showNavBottomBar: showNavBarExample);
+  //   }
+  // }
 
   PreferredSizeWidget createAppBar(BuildContext context) {
     return AppBar(
@@ -210,7 +217,7 @@ class _FlutterQuotationState extends State<FlutterQuotation> {
             child: PersistentTabView(
               context,
               controller: controller,
-              screens: buildScreens(oauth),
+              screens: buildScreens(searchKey, clientKey, settingKey, oauth, _loginCallback),
               items: navBarsItems(context),
               confineInSafeArea: true,
               backgroundColor: Colors.white, // Default is Colors.white.
@@ -244,5 +251,12 @@ class _FlutterQuotationState extends State<FlutterQuotation> {
         );
       }),
     );
+  }
+
+  void _loginCallback(String text) {
+    setState(() {
+      debugPrint("$tag _loginCallback: $text");
+      globals.azureAccessToken = text;
+    });
   }
 }

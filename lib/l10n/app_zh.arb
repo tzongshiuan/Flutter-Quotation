@@ -253,7 +253,10 @@
   "@settingSilverPriceLabel": {
     "description": ""
   },
-
+  "settingNeedLogin": "請至設定頁面登入帳號",
+  "@settingNeedLogin": {
+    "description": ""
+  },
 
 
 

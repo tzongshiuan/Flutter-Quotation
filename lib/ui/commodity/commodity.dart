@@ -189,7 +189,7 @@ class _CommodityScreenState extends State<CommodityScreen> {
                               color: Colors.lightGreen,
                               size: 35.0,
                             ),
-                            onPressed: _onEditImageBtnClick(context),
+                            onPressed: _onEditImageBtnClick(context, textTheme),
                           ),
                         ),
                       ],
@@ -323,11 +323,60 @@ class _CommodityScreenState extends State<CommodityScreen> {
       });
     };
   }
-
-  void Function() _onEditImageBtnClick(BuildContext context) {
+  void Function() _onEditImageBtnClick(BuildContext context, TextTheme textTheme) {
     return () {
       debugPrint("$tag _onEditImageBtnClick()");
-      showToast(context, "GGGGGGGGGGGGGGGGGGGG");
+      showDialog(
+        context: context,
+        // barrierDismissible: false,
+        builder: (BuildContext context) => AlertDialog(
+          title: Text(
+            AppLocalizations.of(context)?.commodityDialogPhotoSelectTitle ?? "",
+            style: textTheme.titleLarge!
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              TextButton(
+                  onPressed: _goCameraPage(context),
+                  child: Text(
+                      AppLocalizations.of(context)?.gCamera ?? "",
+                      style: textTheme.titleLarge!.copyWith(color: Theme.of(context).colorScheme.primary)
+                  )
+              ),
+              TextButton(
+                  onPressed: _goSelectPhotoPage(context),
+                  child: Text(
+                      AppLocalizations.of(context)?.gPhotoAlbum ?? "",
+                      style: textTheme.titleLarge!.copyWith(color: Theme.of(context).colorScheme.primary)
+                  )
+              )
+            ],
+          ),
+          // actions: <Widget>[
+          //   TextButton(
+          //     onPressed: () => {
+          //       Navigator.pop(context, 'Cancel')
+          //     },
+          //     child: Text(
+          //       'Cancel',
+          //       style: textTheme.titleLarge!.copyWith(color: Theme.of(context).colorScheme.primary)
+          //     ),
+          //   ),
+          //   TextButton(
+          //     onPressed: () => {
+          //       Navigator.pop(context, 'OK')
+          //     },
+          //     child: Text(
+          //       'OK',
+          //       style: textTheme.titleLarge!.copyWith(color: Theme.of(context).colorScheme.primary)
+          //     ),
+          //   ),
+          // ],
+        )
+      );
     };
   }
 
@@ -350,6 +399,36 @@ class _CommodityScreenState extends State<CommodityScreen> {
       });
     });
     controller.resumeCamera();
+  }
+
+  void Function() _goCameraPage(BuildContext context) {
+    return () {
+      debugPrint("$tag _goCameraPage()");
+      showToast(context, "Camera");
+
+      Navigator.pop(context, '_goCameraPage');
+      // pushNewScreen(
+      //   context,
+      //   screen: const LocationScreen(),
+      //   withNavBar: true, // OPTIONAL VALUE. True by default.
+      //   pageTransitionAnimation: PageTransitionAnimation.cupertino,
+      // );
+    };
+  }
+
+  void Function() _goSelectPhotoPage(BuildContext context) {
+    return () {
+      debugPrint("$tag _goSelectPhotoPage()");
+      showToast(context, "Select Photo");
+
+      Navigator.pop(context, '_goSelectPhotoPage');
+      // pushNewScreen(
+      //   context,
+      //   screen: const LocationScreen(),
+      //   withNavBar: true, // OPTIONAL VALUE. True by default.
+      //   pageTransitionAnimation: PageTransitionAnimation.cupertino,
+      // );
+    };
   }
 
   @override

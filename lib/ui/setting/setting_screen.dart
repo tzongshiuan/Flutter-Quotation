@@ -2,8 +2,6 @@ import 'dart:convert';
 
 import 'package:aad_oauth/aad_oauth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_azure_b2c/B2CConfiguration.dart';
-import 'package:flutter_azure_b2c/flutter_azure_b2c.dart';
 
 const String tag = "SettingScreen";
 
@@ -61,12 +59,12 @@ class _SettingScreenState extends State<SettingScreen> {
                       child: Text("LogIn")),
                   TextButton(
                       onPressed: () async {
-                        var subjects = await AzureB2C.getSubjects();
-                        var info = await AzureB2C.getUserInfo(subjects![0]);
-                        setState(() {
-                          _subjects = subjects;
-                          _retData = json.encode(info);
-                        });
+                        // var subjects = await AzureB2C.getSubjects();
+                        // var info = await AzureB2C.getUserInfo(subjects![0]);
+                        // setState(() {
+                        //   _subjects = subjects;
+                        //   _retData = json.encode(info);
+                        // });
                       },
                       child: Text("UserInfo")),
                 ],
@@ -75,10 +73,10 @@ class _SettingScreenState extends State<SettingScreen> {
                 children: [
                   TextButton(
                       onPressed: () async {
-                        var token = await AzureB2C.getAccessToken(_subjects![0]);
-                        setState(() {
-                          _retData = json.encode(token);
-                        });
+                        // var token = await AzureB2C.getAccessToken(_subjects![0]);
+                        // setState(() {
+                        //   _retData = json.encode(token);
+                        // });
                       },
                       child: Text("AccessToken")),
                   TextButton(

@@ -76,13 +76,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_azure_b2c:
-    dependency: "direct main"
-    description:
-      name: flutter_azure_b2c
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.0.9"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -203,13 +196,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0"
-  msal_js:
-    dependency: transitive
-    description:
-      name: msal_js
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.14.0"
   path:
     dependency: transitive
     description:

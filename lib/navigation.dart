@@ -1,7 +1,6 @@
 import 'package:aad_oauth/aad_oauth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_azure_b2c/B2CConfiguration.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:material_3_demo/ui/client/client_screen.dart';
 import 'package:material_3_demo/ui/commodity/commodity.dart';

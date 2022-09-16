@@ -1,13 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+const microColDivider = SizedBox(height: 1);
 const smallColDivider = SizedBox(height: 10);
 const mediumColDivider = SizedBox(height: 20);
 const largeColDivider = SizedBox(height: 30);
 
+const microRowDivider = SizedBox(width: 1);
 const smallRowDivider = SizedBox(width: 10);
 const mediumRowDivider = SizedBox(width: 20);
 const largeRowDivider = SizedBox(width: 30);
+
+const imageAssetPath = "assets/images";
+var imgPlaceholder = const AssetImage("$imageAssetPath/img_loading.gif");
+var imgErrorDefault = Image.asset("$imageAssetPath/ic_commodity_default.jpg");
 
 void showToast(BuildContext context, String text) {
   final scaffold = ScaffoldMessenger.of(context);
@@ -27,4 +33,11 @@ void showToast(BuildContext context, String text) {
   );
 
   ScaffoldMessenger.of(context).showSnackBar(snackBar);
+}
+
+TextStyle getCommodityLabelTextStyle(BuildContext context, TextStyle style) {
+  return style.copyWith(
+    color: Theme.of(context).colorScheme.primary,
+    fontWeight: FontWeight.bold
+  );
 }

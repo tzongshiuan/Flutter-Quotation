@@ -60,17 +60,6 @@ class _LocationScreenState extends State<LocationScreen> {
         ],
       ),
     );
-
-    // return Expanded(
-    //     child: Container(
-    //       color: Colors.white,
-    //       child: Column(
-    //         children: [
-    //           Text("AAA"),
-    //         ],
-    //       ),
-    //     )
-    // );
   }
 
   Widget _scanningUI(TextTheme textTheme) {
@@ -82,6 +71,8 @@ class _LocationScreenState extends State<LocationScreen> {
   }
 
   Widget _onScanFinishUI(BuildContext context, TextTheme textTheme) {
+    final locationTextController = TextEditingController();
+
     return Container(
       padding: const EdgeInsets.all(20.0),
       alignment: Alignment.center,
@@ -99,13 +90,16 @@ class _LocationScreenState extends State<LocationScreen> {
               ),
               largeColDivider,
               TextField(
+                controller: locationTextController,
+                style: textTheme.headlineSmall,
+                keyboardType: TextInputType.text,
                 decoration: InputDecoration(
                   suffixIcon: IconButton(
                     onPressed: _onLocationSendBtnClick(context),
                     icon: const Icon(Icons.send),
                   ),
                   labelText: AppLocalizations.of(context)?.locationEditLocationHint ?? "",
-                  labelStyle: textTheme.headlineSmall,
+                  labelStyle: textTheme.headlineSmall?.copyWith(color: Colors.grey),
                   enabledBorder: const OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(20.0)),
                     borderSide: BorderSide(

@@ -208,6 +208,9 @@ class _CommodityScreenState extends State<CommodityScreen> {
   Widget _commodityAttributes(BuildContext context, TextTheme textTheme) {
     var pn = "${AppLocalizations.of(context)?.commodityAttributeProductNumber ?? ""}: ";
     var priceNote = "${AppLocalizations.of(context)?.commodityAttributePriceNote ?? ""}: ";
+    var copperPriceUsd = "${AppLocalizations.of(context)?.commodityAttributeCopperPriceUsd ?? ""}: ";
+    var silverPriceUsd = "${AppLocalizations.of(context)?.commodityAttributeSilverPriceUsd ?? ""}: ";
+    var platePriceWarn = "${AppLocalizations.of(context)?.commodityAttributePlatePriceWarning ?? ""}: ";
 
     return Padding(
       padding: const EdgeInsets.all(12.0),
@@ -219,6 +222,9 @@ class _CommodityScreenState extends State<CommodityScreen> {
           children: [
             _getAttributeText(pn, "123", context, textTheme),
             _getAttributeText(priceNote, "123", context, textTheme),
+            _getAttributeText(copperPriceUsd, "123", context, textTheme),
+            _getAttributeText(silverPriceUsd, "123", context, textTheme),
+            _getAttributeText(platePriceWarn, "123", context, textTheme),
 
             _commodityExtAttributes(context, textTheme)
           ],
@@ -229,6 +235,23 @@ class _CommodityScreenState extends State<CommodityScreen> {
 
   Widget _commodityExtAttributes(BuildContext context, TextTheme textTheme) {
     var stonePriceWarn = "${AppLocalizations.of(context)?.commodityAttributeStonePriceWarning ?? ""}: ";
+    var copperPriceWarn = "${AppLocalizations.of(context)?.commodityAttributeCopperPriceWarning ?? ""}: ";
+    var cast = "${AppLocalizations.of(context)?.commodityAttributeCast ?? ""}: ";
+    var polish = "${AppLocalizations.of(context)?.commodityAttributePolish ?? ""}: ";
+    var plateCode = "${AppLocalizations.of(context)?.commodityAttributePlateCode ?? ""}: ";
+    var platePrice = "${AppLocalizations.of(context)?.commodityAttributeOriginalPlatePrice ?? ""}: ";
+    var newWhiteGoldPlatePrice = "${AppLocalizations.of(context)?.commodityAttributeNewWhiteGoldPlatePrice ?? ""}: ";
+    var stoneGrowthPrice = "${AppLocalizations.of(context)?.commodityAttributeStoneGrowthPrice ?? ""}: ";
+    var stoneSettingPrice = "${AppLocalizations.of(context)?.commodityAttributeStoneSettingPrice ?? ""}: ";
+    var otherTotal = "${AppLocalizations.of(context)?.commodityAttributeOtherTotal ?? ""}: ";
+    var totalAdditionalPrice = "${AppLocalizations.of(context)?.commodityAttributeTotalAdditionalPrice ?? ""}: ";
+    var copperPrice = "${AppLocalizations.of(context)?.commodityAttributeCopperPrice ?? ""}: ";
+    var realWeight = "${AppLocalizations.of(context)?.commodityAttributeRealWeight ?? ""}: ";
+    var growthWeight = "${AppLocalizations.of(context)?.commodityAttributeGrowthWeight ?? ""}: ";
+    var productWeight = "${AppLocalizations.of(context)?.commodityAttributeProductWeight ?? ""}: ";
+    var addPrice1 = "${AppLocalizations.of(context)?.commodityAttributeAddPrice1 ?? ""}: ";
+    var addPrice2 = "${AppLocalizations.of(context)?.commodityAttributeAddPrice2 ?? ""}: ";
+    var addPrice3 = "${AppLocalizations.of(context)?.commodityAttributeAddPrice3 ?? ""}: ";
 
     if (isAttributeVisible) {
       return Column(
@@ -236,6 +259,23 @@ class _CommodityScreenState extends State<CommodityScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _getAttributeText(stonePriceWarn, "123", context, textTheme),
+          _getAttributeText(copperPriceWarn, "123", context, textTheme),
+          _getAttributeText(cast, "123", context, textTheme),
+          _getAttributeText(polish, "123", context, textTheme),
+          _getAttributeText(plateCode, "123", context, textTheme),
+          _getAttributeText(platePrice, "123", context, textTheme),
+          _getAttributeText(newWhiteGoldPlatePrice, "123", context, textTheme),
+          _getAttributeText(stoneGrowthPrice, "123", context, textTheme),
+          _getAttributeText(stoneSettingPrice, "123", context, textTheme),
+          _getAttributeText(otherTotal, "123", context, textTheme),
+          _getAttributeText(totalAdditionalPrice, "123", context, textTheme),
+          _getAttributeText(copperPrice, "123", context, textTheme),
+          _getAttributeText(realWeight, "123", context, textTheme),
+          _getAttributeText(growthWeight, "123", context, textTheme),
+          _getAttributeText(productWeight, "123", context, textTheme),
+          _getAttributeText(addPrice1, "123", context, textTheme),
+          _getAttributeText(addPrice2, "123", context, textTheme),
+          _getAttributeText(addPrice3, "123", context, textTheme),
         ],
       );
     } else {

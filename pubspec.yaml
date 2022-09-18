@@ -23,6 +23,9 @@ dependencies:
 #  flutter_azure_b2c: ^0.0.9
   aad_oauth: ^0.4.0
   shared_preferences: ^2.0.15
+  image_picker: ^0.8.5+3
+  path_provider: ^2.0.11
+  image_cropper: ^3.0.0
 
 dev_dependencies:
   flutter_test:

@@ -1,4 +1,4 @@
-String azureAccessToken = "";
+String azureAccessToken = "GGGGGGGGGGGG";
 
 String settingMultiplier = "";
 String settingUsdPrice = "";

@@ -1,9 +1,12 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:image_cropper/image_cropper.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import '../common/common_util.dart';
+import 'package:image_picker/image_picker.dart';
 
 const String tag = "CommodityScreen";
 
@@ -21,6 +24,15 @@ class _CommodityScreenState extends State<CommodityScreen> {
   String? result;
   QRViewController? controller;
   bool isAttributeVisible = true;
+
+  CroppedFile? _croppedFile;
+  XFile? _imageFile;
+
+  dynamic _pickImageError;
+  final ImagePicker _picker = ImagePicker();
+  final TextEditingController maxWidthController = TextEditingController();
+  final TextEditingController maxHeightController = TextEditingController();
+  final TextEditingController qualityController = TextEditingController();
 
   @override
   initState() {
@@ -444,31 +456,163 @@ class _CommodityScreenState extends State<CommodityScreen> {
   void Function() _goCameraPage(BuildContext context) {
     return () {
       debugPrint("$tag _goCameraPage()");
-      showToast(context, "Camera");
+
+      _onImageButtonPressed(ImageSource.camera, context: context);
 
       Navigator.pop(context, '_goCameraPage');
-      // pushNewScreen(
-      //   context,
-      //   screen: const LocationScreen(),
-      //   withNavBar: true, // OPTIONAL VALUE. True by default.
-      //   pageTransitionAnimation: PageTransitionAnimation.cupertino,
-      // );
     };
   }
 
   void Function() _goSelectPhotoPage(BuildContext context) {
     return () {
       debugPrint("$tag _goSelectPhotoPage()");
-      showToast(context, "Select Photo");
+
+      _onImageButtonPressed(ImageSource.gallery, context: context);
 
       Navigator.pop(context, '_goSelectPhotoPage');
-      // pushNewScreen(
-      //   context,
-      //   screen: const LocationScreen(),
-      //   withNavBar: true, // OPTIONAL VALUE. True by default.
-      //   pageTransitionAnimation: PageTransitionAnimation.cupertino,
-      // );
     };
+  }
+
+  Future<void> _onImageButtonPressed(ImageSource source,
+      {BuildContext? context, bool isMultiImage = false}) async {
+
+    await _displayPickImageDialog(context!,
+            (double? maxWidth, double? maxHeight, int? quality) async {
+          try {
+            final XFile? pickedFile = await _picker.pickImage(
+              source: source,
+              maxWidth: maxWidth,
+              maxHeight: maxHeight,
+              imageQuality: quality,
+            );
+            setState(() {
+              debugPrint("$tag path: ${pickedFile?.path}");
+              _setImageFileListFromFile(pickedFile);
+            });
+          } catch (e) {
+            setState(() {
+              _pickImageError = e;
+            });
+          }
+        });
+  }
+
+  void _setImageFileListFromFile(XFile? value) {
+    debugPrint("$tag _setImageFileListFromFile");
+
+    Image.file(File(value!.path))
+        .image
+        .resolve(const ImageConfiguration())
+        .addListener(ImageStreamListener((ImageInfo info, bool _) {
+      debugPrint("$tag image width: ${info.image.width}");
+      debugPrint("$tag image height: ${info.image.height}");
+    }));
+
+    _imageFile = value;
+    _cropImage();
+  }
+
+  Future<void> _cropImage() async {
+    debugPrint("$tag _cropImage()");
+
+    if (_imageFile != null) {
+      final croppedFile = await ImageCropper().cropImage(
+        sourcePath: _imageFile!.path,
+        compressFormat: ImageCompressFormat.jpg,
+        compressQuality: 100,
+        uiSettings: [
+          AndroidUiSettings(
+              toolbarTitle: 'Cropper',
+              toolbarColor: Colors.deepOrange,
+              toolbarWidgetColor: Colors.white,
+              initAspectRatio: CropAspectRatioPreset.original,
+              lockAspectRatio: false),
+          IOSUiSettings(
+            title: 'Cropper',
+          ),
+          WebUiSettings(
+            context: context,
+            presentStyle: CropperPresentStyle.dialog,
+            boundary: const CroppieBoundary(
+              width: 520,
+              height: 520,
+            ),
+            viewPort:
+            const CroppieViewPort(width: 480, height: 480, type: 'circle'),
+            enableExif: true,
+            enableZoom: true,
+            showZoomer: true,
+          ),
+        ],
+      );
+      if (croppedFile != null) {
+        setState(() {
+          _croppedFile = croppedFile;
+        });
+      }
+    }
+    
+    // TODO upload image to the Server and reload the list
+  }
+
+  Future<void> _displayPickImageDialog(
+      BuildContext context, OnPickImageCallback onPick) async {
+    return onPick(null, null, null);
+
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text('Add optional parameters'),
+            content: Column(
+              children: <Widget>[
+                TextField(
+                  controller: maxWidthController,
+                  keyboardType:
+                  const TextInputType.numberWithOptions(decimal: true),
+                  decoration: const InputDecoration(
+                      hintText: 'Enter maxWidth if desired'),
+                ),
+                TextField(
+                  controller: maxHeightController,
+                  keyboardType:
+                  const TextInputType.numberWithOptions(decimal: true),
+                  decoration: const InputDecoration(
+                      hintText: 'Enter maxHeight if desired'),
+                ),
+                TextField(
+                  controller: qualityController,
+                  keyboardType: TextInputType.number,
+                  decoration: const InputDecoration(
+                      hintText: 'Enter quality if desired'),
+                ),
+              ],
+            ),
+            actions: <Widget>[
+              TextButton(
+                child: const Text('CANCEL'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+              TextButton(
+                  child: const Text('PICK'),
+                  onPressed: () {
+                    final double? width = maxWidthController.text.isNotEmpty
+                        ? double.parse(maxWidthController.text)
+                        : null;
+                    final double? height = maxHeightController.text.isNotEmpty
+                        ? double.parse(maxHeightController.text)
+                        : null;
+                    final int? quality = qualityController.text.isNotEmpty
+                        ? int.parse(qualityController.text)
+                        : null;
+                    onPick(width, height, quality);
+                    Navigator.of(context).pop();
+                  }),
+            ],
+          );
+        });
   }
 
   @override
@@ -478,3 +622,6 @@ class _CommodityScreenState extends State<CommodityScreen> {
     super.dispose();
   }
 }
+
+typedef OnPickImageCallback = void Function(
+    double? maxWidth, double? maxHeight, int? quality);
